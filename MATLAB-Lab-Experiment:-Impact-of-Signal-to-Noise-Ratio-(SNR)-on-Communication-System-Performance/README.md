@@ -27,6 +27,6 @@ As the SNR decreases from 10 dB down to -5 dB, the AWGN heavily distorts the rec
 
 ## Usage
 1. Open MATLAB or Octave.
-2. Open the `.m` script file containing the code.
+2. Open the `impact_of_Signal.m` script file containing the code.
 3. Run the script.
 4. A figure window will automatically generate showing the 4x3 grid of subplots detailing the simulation results.

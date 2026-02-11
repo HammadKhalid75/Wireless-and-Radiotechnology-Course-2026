@@ -9,6 +9,9 @@ To explore and analyze cellular network parameters using the smartphone service 
 * **Test Location:** Kuopio, Finland (Indoors)
 
 ## 3. Collected Measurement Data
+
+![Field Test Mode Dashboard](5.jpg)
+
 | Parameter | Value | Description |
 | :--- | :--- | :--- |
 | **Technology** | LTE | 4G Long Term Evolution |

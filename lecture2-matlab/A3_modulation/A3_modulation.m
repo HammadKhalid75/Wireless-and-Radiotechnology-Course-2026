@@ -1,6 +1,6 @@
 % A3: Basic modulation by multiplication
-% Student: <Name>
-% Student ID: <ID>
+% Student: <Hammad Khalid>
+% Student ID: <s2416301>
 
 clear; close all; clc;
 
@@ -73,5 +73,6 @@ xlabel('Frequency [Hz]');
 ylabel('Magnitude');
 title('A3: Spectrum of Modulated Signal s(t)');
 xlim([0 5000]);
+
 
 exportgraphics(gcf, 'A3_passband.png', 'Resolution', 200);

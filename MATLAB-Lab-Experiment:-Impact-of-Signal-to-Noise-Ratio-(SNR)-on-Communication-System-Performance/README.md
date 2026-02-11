@@ -17,7 +17,7 @@ This repository contains a MATLAB simulation designed to investigate how varying
 5.  **Visualization:** The script generates subplots comparing the original modulated signal, the noisy received signal, and the final demodulated output against the original message for each SNR value.
 
 ## Results and Observations
-![Demodulation Results](results.jpg)
+![Demodulation Results](results.png)
 As the SNR decreases from 10 dB down to -5 dB, the AWGN heavily distorts the received signal's amplitude envelope. 
 * **High SNR (10 dB, 5 dB):** The noise floor is low enough that the low-pass filter and thresholding successfully recover the original message with zero or minimal bit errors.
 * **Low SNR (0 dB, -5 dB):** The noise amplitude frequently exceeds the carrier amplitude. The demodulator begins to misinterpret noise spikes as logic '1's or signal depressions as logic '0's, leading to a high Bit Error Rate (BER) and eventual communication failure.

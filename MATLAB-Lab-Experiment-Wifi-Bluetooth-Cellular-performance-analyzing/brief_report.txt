@@ -1,0 +1,148 @@
+% =========================================================================
+% WIRELESS COMMUNICATION PERFORMANCE ANALYSIS
+% =========================================================================
+% 
+% --- COMPARATIVE ANALYSIS REPORT ---
+% 
+% 1. SIMULATION OVERVIEW
+% This script simulates the physical layer performance of WiFi (802.11b), 
+% Bluetooth, and 2G Cellular (GSM) networks. Performance is measured using 
+% the Friis Transmission Equation for Received Power (Pr) and the 
+% Shannon-Hartley theorem for Channel Capacity (C).
+% 
+% 2. OBSERVATIONS & TRENDS
+% * Received Power (Pr) & Path Loss: 
+%   All three technologies show a logarithmic decay in received power as 
+%   distance increases, aligning with the free-space path loss model. Cellular 
+%   maintains higher received power over much larger distances due to its 
+%   high transmit power (40 W) and larger wavelength (850 MHz).
+% 
+% * Signal-to-Interference-plus-Noise Ratio (SINR):
+%   With noise power (Pn) held constant, the SINR curves mirror the received 
+%   power curves. Bluetooth's SINR drops rapidly due to its low transmit 
+%   power (10 mW), restricting its range to under 10 meters.
+% 
+% * Channel Capacity:
+%   - WiFi achieves the highest overall channel capacity because of its wide 
+%   bandwidth (22 MHz) and moderate transmit power (100 mW). 
+%   - Bluetooth has the lowest capacity due to its narrow 2 MHz bandwidth 
+%   and low power, suiting it only for short-range, low-data tasks.
+%   - Cellular has massive transmit power (40 W) but its channel capacity 
+%   is severely limited by its narrow bandwidth (200 kHz), sitting much 
+%   lower than WiFi. This confirms 2G is optimized for long-range voice, 
+%   not high-speed data.
+% 
+% 3. CONCLUSIONS
+% The simulations highlight core wireless engineering trade-offs:
+% - Range vs. Data Rate: Cellular prioritizes massive range at the cost 
+%   of data rate. WiFi prioritizes high data rates at the cost of range.
+% - Power Consumption vs. Range: Bluetooth minimizes transmit power to save 
+%   battery, sacrificing both range and capacity. 
+% 
+% =========================================================================
+% MATLAB CODE IMPLEMENTATION
+% =========================================================================
+
+clear all;
+close all;
+
+% --- General System Parameters ---
+G_t = 1;                % Gain of transmitting antenna
+G_r = 1;                % Gain of receiving antenna
+c = 3*1e8;              % Speed of light (m/s)
+Pn = 500*1e-6;          % Noise power (Watts)
+
+% =========================================================================
+% Task 1: WiFi Simulation (IEEE 802.11b)
+% =========================================================================
+f_wifi = 2.4*1e9;       % Frequency (Hz)
+BW_wifi = 22*1e6;       % Bandwidth (Hz)
+d_wifi = 1:5:100;       % Distance (m)
+P_t_wifi = 100*1e-3;    % Transmit Power (Watts)
+lamb_wifi = c/f_wifi;   % Wavelength (m)
+
+% Calculations
+Pr_wifi = (P_t_wifi * G_t * G_r * lamb_wifi^2) ./ ((4 * pi * d_wifi).^2);
+Pr_wifi_dB = 10 * log10(Pr_wifi); 
+
+SINR_wifi = Pr_wifi ./ Pn;
+SINR_wifi_dB = 10 * log10(SINR_wifi); 
+
+C_wifi = BW_wifi .* log2(1 + SINR_wifi);
+C_wifi_dB = 10 * log10(C_wifi); 
+
+% =========================================================================
+% Task 2: Bluetooth Simulation (IEEE 802.15.1)
+% =========================================================================
+f_bt = 2.45*1e9;        % Frequency (Hz)
+BW_bt = 2*1e6;          % Bandwidth (Hz)
+d_bt = 0.5:0.5:10;      % Distance (m)
+P_t_bt = 10*1e-3;       % Transmit Power (Watts)
+lamb_bt = c/f_bt;       % Wavelength (m)
+
+% Calculations
+Pr_bt = (P_t_bt * G_t * G_r * lamb_bt^2) ./ ((4 * pi * d_bt).^2);
+Pr_bt_dB = 10 * log10(Pr_bt);
+
+SINR_bt = Pr_bt ./ Pn;
+SINR_bt_dB = 10 * log10(SINR_bt);
+
+C_bt = BW_bt .* log2(1 + SINR_bt);
+C_bt_dB = 10 * log10(C_bt);
+
+% =========================================================================
+% Task 3: Cellular Simulation (2G, GSM)
+% =========================================================================
+f_cell = 850*1e6;       % Frequency (Hz)
+BW_cell = 200*1e3;      % Bandwidth (Hz)
+d_cell = 100:100:5000;  % Distance (m)
+P_t_cell = 40;          % Transmit Power (Watts)
+lamb_cell = c/f_cell;   % Wavelength (m)
+
+% Calculations
+Pr_cell = (P_t_cell * G_t * G_r * lamb_cell^2) ./ ((4 * pi * d_cell).^2);
+Pr_cell_dB = 10 * log10(Pr_cell);
+
+SINR_cell = Pr_cell ./ Pn;
+SINR_cell_dB = 10 * log10(SINR_cell);
+
+C_cell = BW_cell .* log2(1 + SINR_cell);
+C_cell_dB = 10 * log10(C_cell);
+
+% =========================================================================
+% Task 4: Comparative Analysis Plots
+% =========================================================================
+figure('Name', 'Task 4: Comparative Analysis', 'Position', [150, 150, 1000, 350]);
+
+% --- 1. Received Power Comparison ---
+subplot(1,3,1);
+semilogx(d_wifi, Pr_wifi_dB, 'b', 'LineWidth', 1.5); hold on;
+semilogx(d_bt, Pr_bt_dB, 'r', 'LineWidth', 1.5);
+semilogx(d_cell, Pr_cell_dB, 'k', 'LineWidth', 1.5);
+grid on;
+title('Received Power vs Distance');
+xlabel('Distance (m) [Log Scale]');
+ylabel('P_r (dB)');
+legend('WiFi', 'Bluetooth', 'Cellular', 'Location', 'southwest');
+
+% --- 2. SINR Comparison ---
+subplot(1,3,2);
+semilogx(d_wifi, SINR_wifi_dB, 'b', 'LineWidth', 1.5); hold on;
+semilogx(d_bt, SINR_bt_dB, 'r', 'LineWidth', 1.5);
+semilogx(d_cell, SINR_cell_dB, 'k', 'LineWidth', 1.5);
+grid on;
+title('SINR vs Distance');
+xlabel('Distance (m) [Log Scale]');
+ylabel('SINR (dB)');
+legend('WiFi', 'Bluetooth', 'Cellular', 'Location', 'southwest');
+
+% --- 3. Channel Capacity Comparison ---
+subplot(1,3,3);
+semilogx(d_wifi, C_wifi_dB, 'b', 'LineWidth', 1.5); hold on;
+semilogx(d_bt, C_bt_dB, 'r', 'LineWidth', 1.5);
+semilogx(d_cell, C_cell_dB, 'k', 'LineWidth', 1.5);
+grid on;
+title('Capacity vs Distance');
+xlabel('Distance (m) [Log Scale]');
+ylabel('Capacity (dB)');
+legend('WiFi', 'Bluetooth', 'Cellular', 'Location', 'southwest');

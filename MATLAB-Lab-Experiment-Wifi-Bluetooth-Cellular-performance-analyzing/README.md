@@ -4,7 +4,7 @@
 This project analyzes and compares the communication performance of three major wireless technologies: **WiFi (IEEE 802.11b)**, **Bluetooth**, and **2G Cellular (GSM)**. The simulation calculates and visualizes how distance impacts received power, signal-to-noise ratio (SINR), and overall channel capacity for each standard.
 
 ## Repository Contents
-* `communication_assignment.m`: The primary MATLAB script containing the simulation parameters, mathematical models (Friis Transmission Equation and Shannon-Hartley theorem), and plotting functions.
+* `MATLAB_Lab_Experiment.m`: The primary MATLAB script containing the simulation parameters, mathematical models (Friis Transmission Equation and Shannon-Hartley theorem), and plotting functions.
 * `report.txt`: A brief analytical report summarizing the physical layer performance trends and the engineering trade-offs observed between the three technologies.
 * `Comparative_Graph.png`: A screenshot of the comparative simulation results. *(Note: File name may vary)*
 

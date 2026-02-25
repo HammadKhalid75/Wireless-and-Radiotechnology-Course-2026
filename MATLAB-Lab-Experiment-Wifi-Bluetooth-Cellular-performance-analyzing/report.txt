@@ -1,0 +1,26 @@
+=============================================================================
+TASK 4: COMPARATIVE ANALYSIS REPORT
+Wireless Technologies: WiFi, Bluetooth, and Cellular
+=============================================================================
+
+1. SIMULATION OVERVIEW
+This simulation evaluates the communication performance of WiFi (802.11b), Bluetooth, and 2G Cellular (GSM) networks. The performance is measured using the Friis Transmission Equation for Received Power (Pr) and the Shannon-Hartley theorem for Channel Capacity (C). 
+
+2. OBSERVATIONS & TRENDS
+Received Power (Pr) & Path Loss: 
+All three technologies exhibit a logarithmic decay in received power as distance increases, aligning with the free-space path loss model. Cellular maintains a higher received power over much larger distances due to its significantly higher transmit power (40 W) and larger wavelength (850 MHz) compared to WiFi and Bluetooth (which operate in the 2.4 GHz band with milliwatt-level power).
+
+Signal-to-Interference-plus-Noise Ratio (SINR):
+Because the noise power (Pn) is held constant, the SINR curves mirror the shape of the received power curves. Bluetooth experiences the fastest drop in SINR due to its low transmit power (10 mW), limiting its effective range to under 10 meters.
+
+Channel Capacity:
+Capacity is heavily dictated by bandwidth. 
+- WiFi achieves the highest overall channel capacity because it has the widest bandwidth (22 MHz) combined with a moderate transmit power (100 mW). 
+- Bluetooth has lower capacity due to its narrow 2 MHz bandwidth and low power, making it strictly suitable for short-range, low-data tasks.
+- Cellular presents an interesting trend: despite having a massive transmit power advantage (40 W), its channel capacity is severely limited by its narrow bandwidth (200 kHz). Its capacity curve sits much lower than WiFi, confirming that 2G networks are optimized for long-range voice coverage rather than high-speed data.
+
+3. CONCLUSIONS
+The comparative analysis illustrates the core engineering trade-offs in wireless network design:
+- Range vs. Data Rate: Cellular prioritizes massive range at the cost of data rate. WiFi prioritizes high data rates at the cost of range.
+- Power Consumption vs. Range: Bluetooth minimizes transmit power to save battery life, but sacrifices both range and high data capacity to achieve this. 
+No single technology is superior in all metrics; each is optimized for its specific use case (WLAN, WPAN, and WWAN).

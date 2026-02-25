@@ -11,7 +11,7 @@ This project analyzes and compares the communication performance of three major 
 ## Comparative Simulation Results
 Below is the comparative analysis of WiFi, Bluetooth, and Cellular technologies over their respective operating distances (plotted on a logarithmic scale):
 
-![Comparative Performance Graph]([INSERT_YOUR_SCREENSHOT_FILENAME_HERE.png])
+![Comparative Performance Graph]([Comparative_Graph.png])
 
 ## Key Findings
 1. **Received Power & Path Loss:** All technologies demonstrate a logarithmic decay in received power over distance. Cellular maintains the highest power over long distances due to its massive 40W transmit power and 850 MHz frequency.

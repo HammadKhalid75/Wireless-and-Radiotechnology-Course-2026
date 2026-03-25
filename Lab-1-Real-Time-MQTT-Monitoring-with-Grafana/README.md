@@ -16,7 +16,6 @@ This project simulates an end-to-end IoT data pipeline. It features a simulated 
 ## Grafana Dashboard Configuration
 
 ![Grafana Dashboard](Screenshot_1.png) 
-*(Note: Ensure your uploaded image file matches the name in the markdown link above)*
 
 **Panel Explanation:** The panel above displays a real-time bar chart of the incoming temperature data. The X-axis represents the live timestamps as the data arrives, and the Y-axis represents the temperature values in Celsius (ranging between 20°C and 30°C). 
 

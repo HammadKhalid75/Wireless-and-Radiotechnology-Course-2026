@@ -10,7 +10,7 @@ This project expands upon a standard IoT pipeline to handle structured data stre
 * **Humidity Sensor:** Generates values between 40-80 %. 
   * Topic: `savonia/iot/humidity`
 * **Light Sensor:** Generates values between 100-1000 lux. 
-  * Topic: `savonia/iot/light`
+  * Topic: `savonia/iot/light` 
 
 **Broker Used:** `broker.emqx.io` (Port 1883)
 

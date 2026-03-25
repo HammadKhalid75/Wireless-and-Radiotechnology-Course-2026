@@ -31,7 +31,7 @@ The standard Grafana MQTT data source plugin is designed strictly for live monit
 Grafana acts as the presentation and visualization layer of the IoT system. It translates the raw, continuous stream of numbers coming from the MQTT broker into a human-readable, graphical interface, allowing users to easily monitor the current state of the sensors in real-time.
 
 **2. Why is MQTT useful for monitoring applications?**
-MQTT is a lightweight, low-bandwidth, publish-subscribe messaging protocol. It is highly efficient for IoT applications because it requires very little processing power and battery life from edge devices. Additionally, its publish-subscribe model decouples the sensors from the dashboards—the sensor simply sends data to the broker without needing to know who is listening or how to connect to them directly.
+MQTT is a lightweight, low-bandwidth, publish-subscribe messaging protocol. It is highly efficient for IoT applications because it requires very little processing power and battery life from edge devices. Additionally, its publish-subscribe model decouples the sensors from the dashboards the sensor simply sends data to the broker without needing to know who is listening or how to connect to them directly.
 
 **3. What is the difference between live monitoring and historical storage?**
 Live monitoring only provides a real-time view of current events as they happen, much like looking through a window; once the moment passes, the data is gone. Historical storage involves saving that incoming data into a permanent database (like a time-series database) so it can be queried later. Historical storage allows you to look back at past data to analyze long-term trends, find anomalies, or generate reports.

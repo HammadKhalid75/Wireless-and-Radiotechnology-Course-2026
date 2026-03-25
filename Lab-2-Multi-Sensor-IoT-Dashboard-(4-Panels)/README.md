@@ -19,7 +19,6 @@ This project expands upon a standard IoT pipeline to handle structured data stre
 ## Grafana Dashboard Layout
 
 ![4-Panel Dashboard Screenshot](Screenshot_1.png)
-*(Note: Ensure your uploaded image file matches the name in the markdown link above)*
 
 **Explanation of Dashboard Layout:**
 The dashboard is designed for quick, at-a-glance monitoring using a 3-row layout:

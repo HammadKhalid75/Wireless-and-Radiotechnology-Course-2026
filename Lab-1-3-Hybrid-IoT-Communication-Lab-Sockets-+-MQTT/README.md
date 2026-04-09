@@ -25,13 +25,13 @@ Because this lab was simulated locally on a single machine, all components run o
 ## 📸 Communication Screenshots
 
 ### 1. Socket Communication (Sensor to Edge)
-(./Lab_1.png)
+![Successful Communication Screenshot](./Lab_1.png)
 
 ### 2. MQTT Messages (Edge to Cloud)
-(./Lab_2.png)
+![MQTT Messages](./Lab_2.png)
 
 ### 3. Full Integration (Lab 3 Pipeline)
-(./Lab_3.png)
+![Full Integration](./Lab_3.png)
 
 ## How to Run the Pipeline
 

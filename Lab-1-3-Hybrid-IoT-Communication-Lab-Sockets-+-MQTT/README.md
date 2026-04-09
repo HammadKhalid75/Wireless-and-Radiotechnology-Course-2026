@@ -2,7 +2,7 @@
 
 This repository contains a simulated IoT communication pipeline that models a complete data flow from a sensor to the cloud. The system features three main components: a Sensor Node, an Edge Device, and a Cloud Server. Direct device-to-device communication is achieved via Python socket programming, while edge-to-cloud messaging is handled through the MQTT protocol.
 
-## 🏗️ System Architecture Diagram
+## System Architecture Diagram
 
 Because this lab was simulated locally on a single machine, all components run on localhost while mirroring standard IoT architecture data flows:
 
@@ -16,7 +16,7 @@ Because this lab was simulated locally on a single machine, all components run o
         |                               |     (broker.emqx.io)          |
 ```
 
-## 🌐 Network & Configuration Details
+## Network & Configuration Details
 
 * **IP Addresses:** The sensor client connects to `127.0.0.1` (Localhost) to simulate local communication. The edge device's socket server is bound to `0.0.0.0`, allowing it to listen on all available network interfaces.
 * **MQTT Broker:** `broker.emqx.io` (Public EMQX broker).
@@ -28,12 +28,12 @@ Because this lab was simulated locally on a single machine, all components run o
 (./Lab_1.png)
 
 ### 2. MQTT Messages (Edge to Cloud)
-*(Insert screenshot of MQTT messages here)*
+(./Lab_2.png)
 
 ### 3. Full Integration (Lab 3 Pipeline)
-*(Insert screenshot of the 3-terminal integration here)*
+(./Lab_3.png)
 
-## 🚀 How to Run the Pipeline
+## How to Run the Pipeline
 
 To execute the fully integrated system, where the edge device receives sensor data via sockets and forwards it to the cloud via MQTT, open three separate terminal windows and run the scripts in this exact order:
 

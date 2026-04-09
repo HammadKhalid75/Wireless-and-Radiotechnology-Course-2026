@@ -8,7 +8,7 @@ The system follows a three-stage architecture to process and monitor environment
 
 ```text
   [ Sensor Node ]                 [ Edge Device ]                 [ Cloud Server ]
-(socket_sensor.py)               (edge_device.py)            (mqtt_alert_subscriber.py)
+(mqtt_subscriber)               (edge_device.py)            (mqtt_alert_subscriber.py)
         |                               |                               |
         |======= Local Socket =========>|                               |
         |    (Port 5000)                |                               |
@@ -50,4 +50,4 @@ MQTT is highly efficient for IoT alert systems because it is lightweight and des
 To run the system, open three terminals and start the scripts in this order:
 1. `python mqtt_alert_subscriber.py`
 2. `python edge_device.py`
-3. `python socket_sensor.py`
+3. `python mqtt_subscriber`

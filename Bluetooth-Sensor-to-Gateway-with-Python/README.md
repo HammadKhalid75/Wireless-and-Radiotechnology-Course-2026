@@ -25,10 +25,13 @@ This project is a simple Bluetooth client-server application built in Python usi
 Through this assignment, I learned how to set up RFCOMM sockets in Python to establish a wireless connection between two distinct hardware devices. I also learned how to encode and decode string messages so they can be successfully transmitted and read over a network protocol.
 
 **What was difficult?**
-[WRITE ONE SENTENCE HERE. For example: "The most difficult part was finding the correct MAC address using the command prompt and ensuring both laptops were properly paired before running the code."]
+
+The most difficult part was finding the correct MAC address using the command prompt and ensuring both laptops were properly paired before running the code.
 
 **Where could Bluetooth communication be useful in IoT?**
+
 Bluetooth is highly useful in IoT for short-range, low-power communication. Real-world examples include smart home devices (like a smart thermometer communicating with a wall display), wearable health monitors (like a smartwatch sending heart rate data to a mobile phone), and industrial sensors reading machine diagnostics in close proximity.
 
 **What is the difference between Bluetooth socket communication and WiFi socket communication in practice?**
+
 In practice, Bluetooth is designed for short-range, device-to-device communication with very low power consumption, making it ideal for battery-operated sensors. It typically requires devices to be paired locally. WiFi socket communication operates over a Local Area Network (LAN) via a central router. WiFi has a much longer range and higher data bandwidth, allowing devices to communicate across an entire building or directly to the internet, but it consumes significantly more power, making it better suited for devices plugged into wall power.

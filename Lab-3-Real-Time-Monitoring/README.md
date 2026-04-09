@@ -34,4 +34,4 @@ Running both the Flask server and the YOLO model on a single machine requires ca
 ![YOLO Real-Time Detection](./yolo.png)
 
 ### 3. Bonus Task Output
-![Person Detected](./person_detected_01.png)
+![Person Detected](./person_detected_01.jpg)

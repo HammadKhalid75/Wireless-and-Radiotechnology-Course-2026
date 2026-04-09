@@ -2,7 +2,7 @@
 
 This repository contains an automated large-data IoT pipeline. The system is designed to record video clips at regular intervals, transfer them over a network using a custom TCP protocol, and perform local storage cleanup only after the receiver confirms a successful transfer.
 
-## System Overview
+## System Overview 
 
 The pipeline follows a strict "Record -> Save -> Send -> Confirm -> Delete" workflow to ensure data integrity and manage local edge storage efficiently.
 

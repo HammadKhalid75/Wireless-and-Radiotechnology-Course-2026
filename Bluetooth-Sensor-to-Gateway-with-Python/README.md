@@ -17,7 +17,7 @@ This project is a simple Bluetooth client-server application built in Python usi
 5. The server terminal will immediately begin displaying the incoming temperature readings every 5 seconds.
 
 ## Successful Communication Screenshot
-![Successful Communication Screenshot](./screenshot.png) 
+![Successful Communication Screenshot](./Screenshot.png) 
 <-- (REPLACE THIS IMAGE LINK WITH YOUR ACTUAL SCREENSHOT FILE, OR DRAG-AND-DROP THE IMAGE DIRECTLY INTO GITHUB)
 
 ## Reflection

@@ -1,37 +1,56 @@
 # Local Wi-Fi Network Analysis
 
 ## 1. Measurement Setup
-* **Tool Used:** Network Analyzer Pro (iOS)
-* **Device:** iOS Mobile Device
-* **Measurement Location:** Static (Single point of capture)
+**Objective:** To understand and analyze a local Wi-Fi network and its key performance and configuration parameters.
+**Tools Used:** * Apple iPhone (iOS)
+* Network Analyzer Pro (iOS Application)
+* Speedtest.net (Web Interface)
+
+**Methodology:** Data was collected while connected to a local home Wi-Fi network. Measurements for identity, hardware, and latency were gathered using the Network Analyzer application. Bandwidth testing was supplemented using Speedtest.net due to iOS application limitations.
+
+---
 
 ## 2. Collected Data
-*(Note: Several parameters read "N/A" due to iOS privacy restrictions blocking the app from reading specific Wi-Fi hardware data without precise location permissions enabled.)*
 
-* **Network Speed and Latency:** Not captured in the provided static scan.
-* **Router and Gateway Details:**
-    * **Default Gateway IP:** 10.211.31.254
-    * **DNS Server IP:** 10.212.26.102, 10.212.26.104
-* **Local Device Details:**
-    * **IP Address:** 10.211.20.88
-    * **Subnet Mask:** 255.255.240.0
-    * **IPv6 Address:** fe80::480:f22b:843b:83db / 64
-* **SSID and BSSID:** N/A 
-* **Operating Channel:** N/A
-* **Security Type:** N/A
-* **Nearby Wi-Fi Networks:** N/A 
+### Network Identity & Hardware Details
+* **SSID:** Hammad's Home
+* **BSSID (MAC Address):** d8:44:89:29:de:2c
+* **Router Vendor:** TP-Link Systems Inc
+* **Security Type:** Personal (WPA2/WPA3)
+* **Default Gateway IP:** 192.168.0.1
+* **Device IP Address:** 192.168.0.105
+* **Subnet Mask:** 255.255.255.0
 
-**Attached Screenshot:**
-*(Upload `4.jpg` to your GitHub repository and link it here)*
-`![Network Analyzer Data](4.jpg)`
+> **Screenshot Evidence:**
+> ![Network Info](./network.jpg)
 
-## 3. Analysis and Troubleshooting Discussion
-* **Data Visibility Issue:** The primary issue identified is the inability to view specific Wi-Fi metrics (SSID, BSSID, Channel, Signal Strength). iOS restricts this data for third-party apps unless specific location permissions are granted. This prevents a full analysis of channel overlap or interference.
-* **Network Addressing:** The network utilizes a `/20` subnet (`255.255.240.0`), indicating a large internal network capacity (up to 4094 usable hosts), which is typical for enterprise, campus, or large organizational environments rather than a standard home network. This scale increases the likelihood of network congestion.
-* **Potential Coverage Issues:** In large environments using a `/20` subnet, weak signal coverage and suboptimal access point placement are common issues as users move between building zones.
+### Performance Metrics
+* **Download Speed:** 22.66 Mbps
+* **Network Latency (Ping to Gateway):** Fluctuating between 5.3 ms and 48.7 ms.
+
+> **Screenshot Evidence:**
+> ![Speedtest](./speedtest.jpg)
+> ![Ping Latency](./ping.jpg)
+
+---
+
+## 3. Analysis and Troubleshooting
+
+Based on the collected data, the network connection is functional but shows signs of potential instability that could impact real-time applications (such as gaming or video conferencing).
+
+**Identified Issues:**
+* **Latency Fluctuations:** The Ping test to the default gateway (192.168.0.1) revealed inconsistent response times. While some packets returned in a healthy 5.3 ms to 8.9 ms, others spiked to 45.1 ms and 48.7 ms. In a healthy, localized Wi-Fi environment, pinging the router directly should yield a consistent latency of under 5-10 ms. 
+* **Potential Network Congestion:** The latency spikes indicate that the router is either intermittently struggling to process requests (CPU load) or there is active wireless interference delaying the transmission of packets.
+* **Bandwidth Limitations:** The download speed of 22.66 Mbps is sufficient for basic web browsing and HD streaming, but it may become a bottleneck if multiple devices are using the network simultaneously.
+
+---
 
 ## 4. Final Recommendations and Conclusions
-1.  **Security and Configuration Adjustments:** To complete a full RF analysis, navigate to iOS Settings > Privacy & Security > Location Services, and ensure the Network Analyzer app has "Precise Location" enabled to expose SSID, BSSID, and Channel data.
-2.  **Channel Changes:** Once channel visibility is restored, perform a LAN scan. If the current operating channel overlaps significantly with nearby networks, reconfigure the access points to utilize non-overlapping channels (e.g., channels 1, 6, 11 for 2.4GHz bands).
-3.  **Router/Access Point Repositioning:** If latency spikes or signal drops occur when physically moving through the location, conduct a secondary physical survey to identify dead zones. Relocate access points to central, unobstructed areas to improve line-of-sight and overall signal strength.
-4.  **Frequency Band Utilization:** Ensure band steering is enabled on the network so capable devices are automatically pushed to the 5GHz or 6GHz bands, alleviating congestion on the heavily trafficked 2.4GHz band.
+
+To improve the overall performance and stability of "Hammad's Home" network, I propose the following practical solutions:
+
+1. **Address Channel Interference:** The latency spikes strongly suggest channel overlap with nearby Wi-Fi networks. Logging into the TP-Link router's admin panel and changing the operating channel to a less congested one (e.g., Channels 1, 6, or 11 for 2.4GHz bands) should stabilize the ping response times.
+2. **Utilize the 5GHz Band:** If the router is dual-band and the iPhone is currently connected to the 2.4GHz band, switching to the 5GHz frequency band is highly recommended. This band offers significantly faster speeds and suffers from far less interference from neighboring networks and household appliances. 
+3. **Router Repositioning:** To ensure optimal signal coverage and reduce the chance of packet loss causing latency spikes, the TP-Link router should be placed in a centralized, elevated location away from thick walls or metal obstructions.
+
+**Conclusion:** While the network provides adequate baseline connectivity, the latency data highlights the invisible impact of wireless interference. By making minor configuration adjustments to the router's channels and frequency bands, the network's responsiveness can be significantly optimized.

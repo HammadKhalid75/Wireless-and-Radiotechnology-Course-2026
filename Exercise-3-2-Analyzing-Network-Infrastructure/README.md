@@ -22,15 +22,15 @@
 * **Subnet Mask:** 255.255.255.0
 
 > **Screenshot Evidence:**
-> ![Network Info](./network.jpg)
+> ![Network Info](./network.jpeg)
 
 ### Performance Metrics
 * **Download Speed:** 22.66 Mbps
 * **Network Latency (Ping to Gateway):** Fluctuating between 5.3 ms and 48.7 ms.
 
 > **Screenshot Evidence:**
-> ![Speedtest](./speedtest.jpg)
-> ![Ping Latency](./ping.jpg)
+> ![Speedtest](./speedtest.jpeg)
+> ![Ping Latency](./ping.jpeg)
 
 ---
 
